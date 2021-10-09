@@ -31,3 +31,8 @@ Then open your browser and navigate to http://localhost:8000
 Press CTRL-C in the command prompt / terminal to stop the server.
 
 **commands may vary slightly depending on your operating system*
+
+To run tests:
+```
+C:\Python scripts\TDDBook> python manage.py test functional_tests
+```
