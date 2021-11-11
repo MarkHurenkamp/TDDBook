@@ -34,5 +34,6 @@ Press CTRL-C in the command prompt / terminal to stop the server.
 
 To run tests:
 ```
+C:\Python scripts\TDDBook> python manage.py test lists
 C:\Python scripts\TDDBook> python manage.py test functional_tests
 ```
