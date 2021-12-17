@@ -37,3 +37,7 @@ To run tests:
 C:\Python scripts\TDDBook> python manage.py test lists
 C:\Python scripts\TDDBook> python manage.py test functional_tests
 ```
+To finalize new migrations:
+```
+C:\Python scripts\TDDBook> python manage.py migrate
+```
