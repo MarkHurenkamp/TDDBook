@@ -11,11 +11,11 @@ env.user = config.user
 env.key_filename = config.key_filename
 
 
-run('uptime')
 
 REPO_URL = 'https://github.com/markhurenkamp/TDDBook.git'
 
 def deploy():
+    run('uptime')
     site_folder = f'/home/{env.user}/sites/{env.host}'
     run(f'mkdir -p {site_folder}')
     with cd(site_folder):
@@ -29,7 +29,7 @@ def _get_latest_source() -> None:
     if exists('.git'):
         run('git fetch')
     else:
-        run(f'git clone {REPO_URL}')
+        run(f'git clone {REPO_URL} .')
     current_commit = local("git log -n 1 --format=%H", capture=True)
     run(f'git reset --hard {current_commit}')
 
