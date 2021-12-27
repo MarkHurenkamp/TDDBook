@@ -36,7 +36,7 @@ def _get_latest_source() -> None:
 def _update_virtual_env() -> None:
     if not exists('venv/bin/pip'):
         run(f'python3 -m venv venv')
-    run('./venv/bin pip install -r requirements.txt')
+    run('./venv/bin/pip install -r requirements.txt')
 
 def _create_or_update_dotenv() -> None:
     append('.env', 'DJANGO_DEBUG_FALSE=y')
