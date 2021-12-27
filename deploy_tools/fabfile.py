@@ -44,7 +44,7 @@ def _create_or_update_dotenv() -> None:
     current_contents = run('cat .env')
     if 'DJANGO_SECRET_KEY' not in current_contents:
         new_secret = ''.join(random.SystemRandom().choices('abcdefghijklmnopqrstuvwxyz0123456789', k=50))
-        append('env', f'DJANGO_SECRET_KEY={new_secret}')
+        append('.env', f'DJANGO_SECRET_KEY={new_secret}')
 
 def _update_static_files() -> None:
     run('./venv/bin/python manage.py collectstatic --noinput')
