@@ -1,6 +1,15 @@
 import random
 from fabric.contrib.files import append, exists
 from fabric.api import cd, env, local, run
+from utils.config import Config
+
+config = Config.load_json("config.json")
+
+env.host_string = config.host_string
+env.user = config.user
+env.key_filename = config.key_filename
+
+run('uptime')
 
 REPO_URL = 'https://github.com/markhurenkamp/TDDBook.git'
 
@@ -9,7 +18,7 @@ def deploy():
     run(f'mkdir -p {site_folder}')
     with cd(site_folder):
         _get_latest_source()
-        _update_virtualenv()
+        _update_virtual_env()
         _create_or_update_dotenv()
         _update_static_files()
         _update_database()
