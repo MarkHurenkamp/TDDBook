@@ -1,13 +1,15 @@
 import random
 from fabric.contrib.files import append, exists
 from fabric.api import cd, env, local, run
-from utils.config import Config
+import utils.config_reader as config_reader
 
-config = Config.load_json("config.json")
+config = config_reader.Config.load_json("config.json")
 
+env.host = config.host
 env.host_string = config.host_string
 env.user = config.user
 env.key_filename = config.key_filename
+
 
 run('uptime')
 
