@@ -19,3 +19,7 @@ def add_item(request, list_id):
     list_ = List.objects.get(id=list_id)
     Item.objects.create(text=request.POST['item_text'], list=list_)
     return redirect(f'/lists/{list_.id}/')
+
+def view_powerbi(request):
+    # Test to embed Power BI on my public website, not part of the book
+    return render(request, 'powerbi.html')
