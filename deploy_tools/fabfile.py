@@ -1,7 +1,8 @@
 import random
-from fabric.contrib.files import append, exists
-from fabric.api import cd, env, local, run
+
 import utils.config_reader as config_reader
+from fabric.api import cd, env, local, run
+from fabric.contrib.files import append, exists
 
 config = config_reader.Config.load_json("config.json")
 
@@ -12,7 +13,7 @@ env.key_filename = config.key_filename
 
 
 
-REPO_URL = 'https://github.com/markhurenkamp/TDDBook.git'
+REPO_URL = 'https://github.com/MarkHurenkamp/TDDBook/tree/pbitest'
 
 def deploy():
     run('uptime')
